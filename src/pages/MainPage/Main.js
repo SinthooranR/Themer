@@ -5,35 +5,34 @@ import * as actions from "../../store/actions/index";
 import classes from "./Main.module.css";
 
 const Main = (props) => {
+  let theme;
+  switch (props.theme) {
+    case false:
+      theme = classes.Light;
+      break;
+    case true:
+      theme = classes.Dark;
+      break;
+    default:
+      theme = classes.Light;
+      break;
+  }
 
-    let theme;
-    switch (props.theme) {
-      case false:
-        theme = classes.Light;
-        break;
-      case true:
-        theme = classes.Dark;
-        break;
-      default:
-        theme = classes.Light;
-        break;
-    }
-  
-    let subThemeColor;
-    switch (props.subTheme) {
-      case "red":
-        subThemeColor = classes.Red;
-        break;
-      case "blue":
-        subThemeColor = classes.Blue;
-        break;
-      case "green":
-        subThemeColor = classes.Green;
-        break;
-      default:
-        subThemeColor = theme;
-        break;
-    }
+  let subThemeColor;
+  switch (props.subTheme) {
+    case "red":
+      subThemeColor = classes.Red;
+      break;
+    case "blue":
+      subThemeColor = classes.Blue;
+      break;
+    case "green":
+      subThemeColor = classes.Green;
+      break;
+    default:
+      subThemeColor = theme;
+      break;
+  }
 
   return (
     <div className={[classes.Main, theme].join(" ")}>
@@ -59,24 +58,32 @@ const Main = (props) => {
         <option value="green"> Green </option>
       </select>
 
-      <h4 className={subThemeColor}>HELLLLLLLLLLLLLLO {props.subTheme}</h4>
+      <h1>Font Size: {props.fontSize}px</h1>
+      <button onClick={() => props.onFontIncrease(props.fontSize)}>+</button>
+      <button onClick={() => props.onFontDecrease(props.fontSize)}>-</button>
+
+      <h4 className={subThemeColor} style={{ fontSize: `${props.fontSize}px` }}>
+        HELLLLLLLLLLLLLLO {props.subTheme}
+      </h4>
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
-    return {
-      theme: state.theme,
-      subTheme: state.subTheme,
-    };
+  return {
+    theme: state.theme,
+    subTheme: state.subTheme,
+    fontSize: state.fontSize,
   };
-  const mapDispatchToProps = (dispatch) => {
-    return {
-      onLightTheme: () => dispatch(actions.lightTheme()),
-      onDarkTheme: () => dispatch(actions.darkTheme()),
-      onSelectSubTheme: (color) => dispatch(actions.themeSelect(color)),
-    };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onLightTheme: () => dispatch(actions.lightTheme()),
+    onDarkTheme: () => dispatch(actions.darkTheme()),
+    onSelectSubTheme: (color) => dispatch(actions.themeSelect(color)),
+    onFontIncrease: (size) => dispatch(actions.incrementFont(size)),
+    onFontDecrease: (size) => dispatch(actions.decrementFont(size)),
   };
+};
 
-  export default connect(mapStateToProps, mapDispatchToProps)(Main);
-
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

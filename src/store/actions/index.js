@@ -1,1 +1,7 @@
-export { lightTheme, darkTheme, themeSelect } from "./actionCreators";
+export {
+  lightTheme,
+  darkTheme,
+  themeSelect,
+  incrementFont,
+  decrementFont,
+} from "./actionCreators";

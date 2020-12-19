@@ -18,3 +18,17 @@ export const themeSelect = (subTheme) => {
     payload: subTheme,
   };
 };
+
+export const incrementFont = (fontSize) => {
+  return {
+    type: actionTypes.INCREMENT_FONT,
+    payload: fontSize,
+  };
+};
+
+export const decrementFont = (fontSize) => {
+  return {
+    type: actionTypes.DECREMENT_FONT,
+    payload: fontSize,
+  };
+};

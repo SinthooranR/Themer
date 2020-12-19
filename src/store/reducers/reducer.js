@@ -1,6 +1,6 @@
 import * as actionTypes from "../actions/actionTypes";
 
-const initialState = { theme: false, subTheme: "" };
+const initialState = { theme: false, subTheme: "", fontSize: 16 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -20,6 +20,18 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         subTheme: action.payload,
+      };
+
+    case actionTypes.INCREMENT_FONT:
+      return {
+        ...state,
+        fontSize: action.payload + 4,
+      };
+
+    case actionTypes.DECREMENT_FONT:
+      return {
+        ...state,
+        fontSize: action.payload - 4,
       };
 
     default:

@@ -1,20 +1,16 @@
 import React from "react";
-import {NavLink} from 'react-router-dom';
+import NavItem from "./NavItem.js";
+import classes from "./Navbar.module.css";
 
 const Navbar = (props) => {
   return (
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <NavLink />
-          </li>
-          <li>
-            <NavLink />
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <nav className={classes.Navbar}>
+      <h4>Themer</h4>
+      <ul>
+        <NavItem route="/" routeName="Home" />
+        <NavItem route="/aboutMe" routeName="About" />
+      </ul>
+    </nav>
   );
 };
 

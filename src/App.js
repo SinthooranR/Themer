@@ -10,7 +10,7 @@ function App() {
     <HashRouter>
       <Navbar />
       <Route exact path="/" component={WelcomePage}/>
-      <Route path="/themer" component={MainPage} />
+      <Route path="/home" component={MainPage} />
       <Route path="/aboutMe" component={AboutPage} />
     </HashRouter>
   );

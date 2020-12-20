@@ -28,7 +28,7 @@ const Navbar = (props) => {
     <nav className={[classes.Navbar, theme].join(" ")}>
       <h2 onClick={welcomeHandler}>Themer</h2>
       <ul>
-        <NavItem route="/themer" routeName="Home"/>
+        <NavItem route="/home" routeName="Home"/>
         <NavItem route="/aboutMe" routeName="About" />
       </ul>
     </nav>

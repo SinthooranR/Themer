@@ -39,32 +39,59 @@ const Main = (props) => {
       {/* <img src={logo} className="App-logo" alt="logo" /> */}
       <h1>Welcome to Themer</h1>
 
-      <h2>Select Main Theme</h2>
-      <div>
-        <button onClick={props.onLightTheme}>Light</button>
-        <button onClick={props.onDarkTheme}>Dark</button>
+      <div className={classes.MainSettings}>
+        <div>
+          <h2>Select Main Theme</h2>
+          <div>
+            <button onClick={props.onLightTheme}>Light</button>
+            <button onClick={props.onDarkTheme}>Dark</button>
+          </div>
+
+          <h3>Select Custom Color</h3>
+
+          <select
+            placeholder="Please select your bank"
+            value={props.subTheme}
+            onChange={(event) => props.onSelectSubTheme(event.target.value)}
+          >
+            <option value=""> None </option>
+            <option value="red"> Red </option>
+            <option value="blue"> Blue </option>
+            <option value="green"> Green </option>
+          </select>
+        </div>
+
+        <div>
+          <h2>Select Font</h2>
+          <select
+            placeholder="Please select your bank"
+            value={props.subTheme}
+            onChange={(event) => props.onSelectSubTheme(event.target.value)}
+          >
+            <option value=""> Default </option>
+            <option value="red"> Red </option>
+            <option value="blue"> Blue </option>
+            <option value="green"> Green </option>
+          </select>
+
+          <h3>Font Size : {props.fontSize}px</h3>
+          <button onClick={() => props.onFontIncrease(props.fontSize)}>
+            +
+          </button>
+          <button onClick={() => props.onFontDecrease(props.fontSize)}>
+            -
+          </button>
+
+          <h4
+            className={subThemeColor}
+            style={{ fontSize: `${props.fontSize}px` }}
+          >
+            HELLLLLLLLLLLLLLO {props.subTheme}
+          </h4>
+        </div>
       </div>
 
-      <h3>Select Custom Color</h3>
-
-      <select
-        placeholder="Please select your bank"
-        value={props.subTheme}
-        onChange={(event) => props.onSelectSubTheme(event.target.value)}
-      >
-        <option value=""> None </option>
-        <option value="red"> Red </option>
-        <option value="blue"> Blue </option>
-        <option value="green"> Green </option>
-      </select>
-
-      <h1>Font Size: {props.fontSize}px</h1>
-      <button onClick={() => props.onFontIncrease(props.fontSize)}>+</button>
-      <button onClick={() => props.onFontDecrease(props.fontSize)}>-</button>
-
-      <h4 className={subThemeColor} style={{ fontSize: `${props.fontSize}px` }}>
-        HELLLLLLLLLLLLLLO {props.subTheme}
-      </h4>
+      <h1>Previews</h1>
     </div>
   );
 };

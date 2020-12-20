@@ -10,6 +10,12 @@
   padding-top: 5%;
 }
 
+.MainSettings{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 .Red {
   color: red;
 }

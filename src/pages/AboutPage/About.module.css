@@ -1,0 +1,48 @@
+.About {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.About h1 {
+  margin-top: 0;
+  padding-top: 5%;
+}
+
+.About p {
+  font-size: 1.5rem;
+}
+
+.About a {
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.About a:hover {
+  text-decoration: underline;
+}
+
+.About ul {
+  list-style: none;
+}
+
+.Light {
+  background-color: #fefefe;
+  color: black;
+}
+
+.Light a,
+.Light a:visited {
+  color: black;
+}
+
+.Dark {
+  background-color: #232526;
+  color: white;
+}
+
+.Dark a,
+.Dark a:visited {
+  color: #fefefe;
+}

@@ -3,21 +3,44 @@
   flex-direction: row;
   justify-content: space-evenly;
   background-color: grey;
-  height: 20%;
+  height: 25%;
 }
 
-.Navbar div {
-  width: 25%;
-  margin-left: 15%;
-  height: 100%;
-  margin-top: 1%;
+.Navbar h2{
+    height: 100%;
+    cursor: pointer;
+}
+
+.Navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.25%;
 }
 
 .Navbar a {
-  margin-left: 25%;
+  font-size: 1.5rem;
+  margin-left: 50px;
+  text-decoration: none;
 }
 
-.Navbar a:visited {
-  text-decoration: none;
-  color: red;
+/* Themes */
+.Light {
+  background-color: #d3cce3;
+  color: black;
+}
+
+.Light a,
+.Light a:visited {
+  color: black;
+}
+
+.Dark {
+  background-color: #302b63;
+  color: white;
+}
+
+.Dark a,
+.Dark a:visited{
+  color: #fefefe;
 }

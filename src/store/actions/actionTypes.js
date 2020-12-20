@@ -3,3 +3,4 @@ export const DARK_THEME = "DARK_THEME";
 export const THEME_SELECT = "THEME_SELECT";
 export const INCREMENT_FONT = "INCREMENT_FONT";
 export const DECREMENT_FONT = "DECREMENT_FONT";
+export const FONT_SELECT = "FONT_SELECT";

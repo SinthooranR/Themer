@@ -4,4 +4,5 @@ export {
   themeSelect,
   incrementFont,
   decrementFont,
+  fontSelect,
 } from "./actionCreators";

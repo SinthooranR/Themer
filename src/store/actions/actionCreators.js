@@ -19,6 +19,13 @@ export const themeSelect = (subTheme) => {
   };
 };
 
+export const fontSelect = (font) => {
+  return {
+    type: actionTypes.FONT_SELECT,
+    payload: font,
+  };
+};
+
 export const incrementFont = (fontSize) => {
   return {
     type: actionTypes.INCREMENT_FONT,
